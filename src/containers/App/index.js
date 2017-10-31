@@ -30,14 +30,19 @@ class App extends Component {
 
   componentWillMount(){
     console.log('I am here');
-    console.log(getBooksFromFakeXHR);
+    getBooksFromFakeXHR().then((data) =>{
+      this.setState({
+        books: [...data]
+      });
+    });
   }
 
   componentDidMount(){
-    console.log(this.state.books);
+    
   }
 
   render() {
+    console.log(this.state.books);
     return (
       <div className="App">
 
