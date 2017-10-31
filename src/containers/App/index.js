@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import NewBookForm from '../NewBookForm';
 import BookListItem from '../../components/BookListItem';
+import BookList from '../../components/BookList';
 import { 
   getBooksFromFakeXHR, 
   addBookToFakeXHR, 
@@ -49,9 +50,8 @@ class App extends Component {
           quote="What is the title of your book?"
           addNewBook={this.addNewBook.bind(this)}
         />
-        {this.state.books.map(function(book){
-          return (<BookListItem book={book} />)
-        })}
+        <BookList books={this.state.books} />
+       
       </div>
     );
   }

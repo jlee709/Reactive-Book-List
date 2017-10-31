@@ -5,8 +5,15 @@ class NewBookForm extends Component {
     super(props);
 
     this.state = {
-      nameInput: ''
+      titleInput: '',
+      authorInput: ''
     };
+    this.handleTitleChange = this.handleTitleChange.bind(this);
+
+    this.handleAuthorChange = this.handleAuthorChange.bind(this);
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+
   }
 
   handleSubmit(event){
@@ -16,9 +23,15 @@ class NewBookForm extends Component {
     this.props.addNewBook(this.state.nameInput);
   }
 
-  handleChange(event){
+  handleTitleChange(event){
+    this.setStat({
+      titleInput: event.target.value
+    });
+  }
+
+  handleAuthorChange(event){
     this.setState({
-      nameInput: event.target.value
+      authorInput: event.target.value
     });
   }
 
@@ -26,9 +39,10 @@ class NewBookForm extends Component {
     return (
       <div>
         <h2>{this.props.quote}</h2>
-        <form onSubmit={this.handleSubmit.bind(this)}>
-          <input type="text" placeholder="name" onChange={this.handleChange.bind(this)}/>
+        <form onSubmit={this.handleSubmit}>
+          <input type="text" placeholder="name" onChange={this.handleChange}/>
           <input type="submit" value="Write Name"/>
+
         </form>
         <p>{this.state.nameInput}</p>
       </div>

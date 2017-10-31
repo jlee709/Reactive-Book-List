@@ -4,7 +4,8 @@ const BookListItem = ( props ) => {
   console.log(props);
   return (
     <div className="book">
-      <div>Book Title: { props.book.title }</div>
+      <h4>Book Title: { props.title }</h4>
+      <p>Author: { props.author }</p>
     </div>
   );
 }
