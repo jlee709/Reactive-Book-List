@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NewBookForm from '../NewBookForm';
-import BookList from '../../components/BookListItem';
+import BookList from '../BookList';
 import { 
   getBooksFromFakeXHR, 
   addBookToFakeXHR, 
@@ -38,7 +38,6 @@ class App extends Component {
   }
 
   componentDidMount(){
-    
   }
 
   render() {
@@ -50,7 +49,7 @@ class App extends Component {
           quote="What is the title of your book?"
           addNewBook={this.addNewBook.bind(this)}
         />
-        <BookList guests={this.state.books}/>
+        <BookList books={this.state.books} />
       </div>
     );
   }
