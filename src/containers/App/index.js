@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import NewBookForm from '../NewBookForm';
 import BookList from '../../components/BookListItem';
+import { 
+  getBooksFromFakeXHR, 
+  addBookToFakeXHR, 
+  getBookByIdFromFakeXHR
+} from '../../lib/books.db';
+
+
 class App extends Component {
   constructor(){
     super();
@@ -23,6 +30,7 @@ class App extends Component {
 
   componentWillMount(){
     console.log('I am here');
+    console.log(getBooksFromFakeXHR);
   }
 
   componentDidMount(){
