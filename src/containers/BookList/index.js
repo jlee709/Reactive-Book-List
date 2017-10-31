@@ -7,7 +7,7 @@ class NewBookForm extends Component {
     this.state = {
       title : '',
       author : ''
-    }
+    };
   }
 
   handleSubmit(e) {
@@ -20,7 +20,7 @@ class NewBookForm extends Component {
     this.setState({
       title : e.target.value,
       author : e.target.value
-    })
+    });
   }
 
   render() {
